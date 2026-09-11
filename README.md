@@ -1,6 +1,6 @@
 # Demand Review — Cycle 对比分析 App
 
-**版本:** v1.0 | **最后更新:** 2026-09 | **负责人:** BDCT GSU Change Lead
+**版本:** v1.0 | **最后更新:** 2026-09 | 
 
 ---
 
@@ -20,10 +20,9 @@
 
 ### 数据提取规则
 
-* 提取列：`Account`（省份）、`Product Type`（产品类型）、`Product Name`（产品名称）、所有格式为 `YYYY-MM` 的月份列
-* 纳入账户：7个省份账户（CT-Guangxi、CT-Guangdong、CT-Sichuan、CT-Yunnan、CT-Gansu、CT-Jilin、CT-Shaanxi）及 BDCT HQ
-* 过滤行：排除 `BDCT Total`、`Subtotal 202512/202601/202602/202603` 等汇总行
-* 每个 Cycle 共 179 条产品记录（157 省份 + 22 BDCT HQ）
+* 提取列：`Account`（）、`Product Type`（）、`Product Name`（）、所有格式为 `YYYY-MM` 的月份列
+* 纳入账户：7个省份账户
+
 
 ---
 
@@ -34,7 +33,7 @@
 | 筛选项 | 说明 |
 |--------|------|
 | 省份 | 选择单个账户或查看全部 |
-| 产品类型 | AAU / BBU / DOT / IRU / RRU 或全部 |
+| 产品类型 | |
 | 年份 | 全部 / 仅 2026 / 仅 2027 |
 
 所有筛选项实时联动，变更后所有图表和表格同步刷新。
@@ -52,10 +51,10 @@
 * 汇总表：每行一个账户，各 Cycle 总量 + 首尾 Cycle 总变化 Δ；末行为加粗 Grand Total 合计行，按第一个 Cycle 需求量降序排列
 
 #### 省份对比
-水平分组柱状图，各账户（含 BDCT HQ）并排展示各 Cycle 的总需求，自动按基准 Cycle 降序排列。
+水平分组柱状图，各账户（）并排展示各 Cycle 的总需求，自动按基准 Cycle 降序排列。
 
 #### 产品类型
-五大品类（AAU / BBU / DOT / IRU / RRU）分组柱状图，对比各 Cycle 的品类需求量。
+五大品类（）分组柱状图，对比各 Cycle 的品类需求量。
 
 #### 明细变化
 完整产品明细表，字段包括：
