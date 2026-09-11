@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demand Review — Cycle 对比分析</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>window.APP_DATA = {"metadata": {"title": "Demand Review \u2014 Cycle \u5bf9\u6bd4\u5206\u6790", "generated_at": "2026-09-10T08:46:15.667256+00:00", "description": "BDCT \u7701\u4efd + BDCT HQ \u9700\u6c42\u91cf\u8de8 Cycle \u5bf9\u6bd4", "app_dir": "/home/user/output/demand_review_app", "source_files": {"202601": "/home/user/Demand Review 202601.xlsx", "202602": "/home/user/Demand Review 202602.xlsx", "202603": "/home/user/Demand Review 202603.xlsx"}, "row_counts": {"202601": 179, "202602": 179, "202603": 179}}, "cycles": {"202601": [{"account": "CT-Guangxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-04": 18}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-03": 54}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 60, "2026-03": 15, "2026-04": 6}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-01": 50}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-01": 165}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 105}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 41}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 68}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-03": 22}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-03": 53, "2026-04": 53}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-03": 28}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-01": 20, "2026-03": 38}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 39, "2026-03": 9.333333333333334}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-03": 37.666666666666664, "2026-04": 17.666666666666668}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-03": 75, "2026-04": 15}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-03": 15, "2026-04": 15}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-03": 5, "2026-04": 5}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-03": 25, "2026-04": 5}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-03": 33}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-03": 74}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-03": 25}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-03": 10}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-03": 14}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 60}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 20}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Jilin", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {"2026-03": 2000}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-03": 15, "2026-04": 6, "2026-05": 12, "2026-06": 18, "2026-07": 12, "2026-08": 15, "2026-09": 30, "2026-10": 15, "2026-11": 15, "2026-12": 15, "2027-01": 9, "2027-03": 15, "2027-04": 6, "2027-05": 6, "2027-06": 18, "2027-07": 9, "2027-08": 15, "2027-09": 30, "2027-10": 12, "2027-11": 9, "2027-12": 30}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-04": 15, "2026-05": 42, "2026-06": 111, "2026-07": 24, "2026-08": 36, "2026-09": 141, "2026-10": 48, "2026-11": 15, "2026-12": 138, "2027-01": 30, "2027-02": 30, "2027-03": 90, "2027-04": 15, "2027-05": 60, "2027-06": 90, "2027-07": 24, "2027-08": 36, "2027-09": 141, "2027-10": 36, "2027-11": 60, "2027-12": 138}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-04": 30, "2026-05": 45, "2026-06": 60, "2026-07": 45, "2026-08": 30, "2026-09": 120, "2026-10": 45, "2026-11": 90, "2026-12": 150, "2027-01": 30, "2027-02": 15, "2027-03": 60, "2027-04": 30, "2027-05": 60, "2027-06": 120, "2027-07": 45, "2027-08": 60, "2027-09": 150, "2027-10": 45, "2027-11": 90, "2027-12": 180}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 45, "2026-05": 60, "2026-06": 150, "2026-07": 60, "2026-08": 90, "2026-09": 210, "2026-10": 100, "2026-11": 145, "2026-12": 270, "2027-01": 90, "2027-02": 60, "2027-03": 150, "2027-04": 60, "2027-05": 120, "2027-06": 210, "2027-07": 90, "2027-08": 135, "2027-09": 245, "2027-10": 120, "2027-11": 150, "2027-12": 360}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-03": 15, "2026-05": 3, "2026-06": 12, "2026-07": 3, "2026-09": 12, "2026-11": 6, "2026-12": 9, "2027-02": 6, "2027-03": 9, "2027-05": 3, "2027-06": 12, "2027-07": 3, "2027-09": 12, "2027-11": 6, "2027-12": 9}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-06": 30, "2026-09": 30, "2026-12": 30, "2027-06": 30, "2027-09": 45, "2027-11": 15, "2027-12": 60}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {"2026-12": 150}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {"2026-03": 500, "2026-04": 500}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-03": 20, "2026-04": 15, "2026-05": 20, "2026-06": 130, "2026-07": 20, "2026-08": 30, "2026-09": 150}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-03": 10, "2026-04": 17, "2026-05": 34, "2026-06": 77, "2026-07": 28, "2026-08": 27, "2026-09": 111, "2026-10": 36, "2026-11": 42, "2026-12": 114, "2027-01": 23, "2027-02": 17, "2027-03": 58, "2027-04": 17, "2027-05": 43, "2027-06": 90, "2027-07": 27, "2027-08": 37, "2027-09": 126, "2027-10": 31, "2027-11": 60, "2027-12": 139}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {"2026-10": 33.333333333333336, "2026-11": 48.333333333333336, "2026-12": 90, "2027-01": 30, "2027-02": 20, "2027-03": 50, "2027-04": 20, "2027-05": 40, "2027-06": 70, "2027-07": 30, "2027-08": 45, "2027-09": 81.66666666666667, "2027-10": 40, "2027-11": 50, "2027-12": 120}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}], "202602": [{"account": "CT-Guangxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-05": 18}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 45, "2026-06": 15}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 60, "2026-04": 15, "2026-05": 6, "2026-06": 5}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {"2026-02": 3}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-01": 50, "2026-06": 15}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-01": 165, "2026-06": 60}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 105, "2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-06": 15}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {"2026-02": 1}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 41, "2026-06": 20}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 68, "2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-03": 16}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-03": 190}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-03": 124}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-02": 9, "2026-03": 106}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-03": 81}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {"2026-02": 6}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-01": 20, "2026-02": 23, "2026-04": 15}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 39, "2026-02": 8, "2026-03": 63.24999999999999}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-02": 3, "2026-03": 74.75}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8848", "months": {"2026-03": 66}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {"2026-03": 528}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-06": 30}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-03": 45, "2026-04": 45, "2026-06": 90}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 30, "2026-06": 30}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-03": 15, "2026-04": 15, "2026-06": 10}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-04": 10, "2026-06": 50}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-06": 33}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-06": 74}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-06": 25}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-06": 10}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-06": 14}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 60}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 20}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Jilin", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {"2026-04": 2000}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-04": 6, "2026-06": 18, "2026-07": 12, "2026-08": 15, "2026-09": 30, "2026-10": 15, "2026-11": 15, "2026-12": 15, "2027-01": 9, "2027-03": 15, "2027-04": 6, "2027-05": 6, "2027-06": 18, "2027-07": 9, "2027-08": 15, "2027-09": 30, "2027-10": 12, "2027-11": 9, "2027-12": 30}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-04": 15, "2026-05": 42, "2026-06": 21, "2026-07": 24, "2026-08": 36, "2026-09": 111, "2026-10": 48, "2026-11": 15, "2026-12": 93, "2027-01": 30, "2027-02": 30, "2027-03": 90, "2027-04": 15, "2027-05": 60, "2027-06": 90, "2027-07": 24, "2027-08": 36, "2027-09": 141, "2027-10": 36, "2027-11": 60, "2027-12": 138}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-04": 30, "2026-05": 15, "2026-07": 45, "2026-08": 30, "2026-09": 75, "2026-10": 45, "2026-11": 30, "2026-12": 90, "2027-01": 30, "2027-02": 15, "2027-03": 60, "2027-04": 30, "2027-05": 60, "2027-06": 120, "2027-07": 45, "2027-08": 60, "2027-09": 150, "2027-10": 45, "2027-11": 90, "2027-12": 180}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 60, "2026-05": 60, "2026-06": 90, "2026-07": 60, "2026-08": 90, "2026-09": 165, "2026-10": 100, "2026-11": 91, "2026-12": 210, "2027-01": 90, "2027-02": 60, "2027-03": 150, "2027-04": 60, "2027-05": 120, "2027-06": 210, "2027-07": 90, "2027-08": 135, "2027-09": 245, "2027-10": 120, "2027-11": 150, "2027-12": 360}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-05": 15, "2026-07": 3, "2026-09": 12, "2026-11": 6, "2026-12": 9, "2027-02": 6, "2027-03": 9, "2027-05": 3, "2027-06": 12, "2027-07": 3, "2027-09": 12, "2027-11": 6, "2027-12": 9}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-06": 30, "2026-09": 30, "2026-12": 30, "2027-06": 30, "2027-09": 45, "2027-11": 15, "2027-12": 60}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {"2026-04": 1000}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-04": 40, "2026-05": 20, "2026-06": 110, "2026-07": 20, "2026-08": 30, "2026-09": 135}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-04": 267, "2026-05": 24, "2026-06": 23, "2026-07": 28, "2026-08": 27, "2026-09": 86, "2026-10": 36, "2026-11": 22, "2026-12": 79, "2027-01": 23, "2027-02": 17, "2027-03": 58, "2027-04": 17, "2027-05": 43, "2027-06": 90, "2027-07": 27, "2027-08": 37, "2027-09": 126, "2027-10": 31, "2027-11": 60, "2027-12": 139}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {"2026-10": 33.333333333333336, "2026-11": 30.333333333333332, "2026-12": 70, "2027-01": 30, "2027-02": 20, "2027-03": 50, "2027-04": 20, "2027-05": 40, "2027-06": 70, "2027-07": 30, "2027-08": 45, "2027-09": 81.66666666666667, "2027-10": 40, "2027-11": 50, "2027-12": 120}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}], "202603": [{"account": "CT-Guangxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-05": 18}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Guangxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 45, "2026-06": 15}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 60, "2026-03": 2, "2026-04": 15, "2026-05": 6, "2026-06": 5}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-03": 2}}, {"account": "CT-Guangxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {"2026-02": 3}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-01": 50, "2026-06": 15}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-01": 165, "2026-06": 60}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 105, "2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-06": 15}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Guangdong", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {"2026-02": 1}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 41, "2026-06": 20}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 68, "2026-06": 30}}, {"account": "CT-Guangdong", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Guangdong", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Guangdong", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-04": 16}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-04": 190}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-04": 124}}, {"account": "CT-Yunnan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-02": 9, "2026-04": 106}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-04": 40}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {"2026-02": 6}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-01": 20, "2026-02": 23, "2026-05": 15}}, {"account": "CT-Yunnan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-01": 39, "2026-02": 8, "2026-04": 63.24999999999999}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-02": 3, "2026-04": 74.75}}, {"account": "CT-Yunnan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Yunnan", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Yunnan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-06": 30}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-04": 90, "2026-06": 90}}, {"account": "CT-Sichuan", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 30, "2026-06": 30}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Sichuan", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-04": 15, "2026-06": 10}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-04": 25, "2026-06": 50}}, {"account": "CT-Sichuan", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Sichuan", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Sichuan", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-06": 33}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-06": 74}}, {"account": "CT-Gansu", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-06": 25}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Gansu", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-06": 10}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-06": 14}}, {"account": "CT-Gansu", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Gansu", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Gansu", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-01": 60}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-01": 20}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Jilin", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Jilin", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {}}, {"account": "CT-Shaanxi", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {}}, {"account": "CT-Shaanxi", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {}}, {"account": "CT-Shaanxi", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "CT-Shaanxi", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "CT-Shaanxi", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "Radio 4432 800M", "months": {"2026-04": 2000}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO2219 B1CN", "months": {"2026-04": 6, "2026-06": 18, "2026-07": 12, "2026-08": 15, "2026-09": 30, "2026-10": 15, "2026-11": 15, "2026-12": 15, "2027-01": 9, "2027-03": 15, "2027-04": 6, "2027-05": 6, "2027-06": 18, "2027-07": 9, "2027-08": 15, "2027-09": 30, "2027-10": 12, "2027-11": 9, "2027-12": 30}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO8863 B42", "months": {"2026-04": 15, "2026-05": 42, "2026-06": 21, "2026-07": 24, "2026-08": 36, "2026-09": 111, "2026-10": 48, "2026-11": 15, "2026-12": 93, "2027-01": 30, "2027-02": 30, "2027-03": 90, "2027-04": 15, "2027-05": 60, "2027-06": 90, "2027-07": 24, "2027-08": 36, "2027-09": 141, "2027-10": 36, "2027-11": 60, "2027-12": 138}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4432 B1B", "months": {"2026-04": 30, "2026-05": 15, "2026-07": 45, "2026-08": 30, "2026-09": 75, "2026-10": 45, "2026-11": 30, "2026-12": 90, "2027-01": 30, "2027-02": 15, "2027-03": 60, "2027-04": 30, "2027-05": 60, "2027-06": 120, "2027-07": 45, "2027-08": 60, "2027-09": 150, "2027-10": 45, "2027-11": 90, "2027-12": 180}}, {"account": "BDCT HQ", "product_type": "RRU", "product_name": "RADIO4481 44B1B 44B3A C", "months": {"2026-04": 60, "2026-05": 60, "2026-06": 90, "2026-07": 60, "2026-08": 90, "2026-09": 165, "2026-10": 100, "2026-11": 91, "2026-12": 210, "2027-01": 90, "2027-02": 60, "2027-03": 150, "2027-04": 60, "2027-05": 120, "2027-06": 210, "2027-07": 90, "2027-08": 135, "2027-09": 245, "2027-10": 120, "2027-11": 150, "2027-12": 360}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR4435 B42", "months": {"2026-05": 15, "2026-07": 3, "2026-09": 12, "2026-11": 6, "2026-12": 9, "2027-02": 6, "2027-03": 9, "2027-05": 3, "2027-06": 12, "2027-07": 3, "2027-09": 12, "2027-11": 6, "2027-12": 9}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR3236 B42", "months": {}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR6419 B42", "months": {"2026-06": 30, "2026-09": 30, "2026-12": 30, "2027-06": 30, "2027-09": 45, "2027-11": 15, "2027-12": 60}}, {"account": "BDCT HQ", "product_type": "AAU", "product_name": "AIR 5343 B258E DC", "months": {}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "BASEBAND 6631", "months": {"2026-04": 1000}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6651", "months": {"2026-04": 40, "2026-05": 20, "2026-06": 110, "2026-07": 20, "2026-08": 30, "2026-09": 135, "2026-10": 13}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6647", "months": {"2026-04": 267, "2026-05": 24, "2026-06": 23, "2026-07": 28, "2026-08": 27, "2026-09": 86, "2026-10": 36, "2026-11": 22, "2026-12": 79, "2027-01": 23, "2027-02": 17, "2027-03": 58, "2027-04": 17, "2027-05": 43, "2027-06": 90, "2027-07": 27, "2027-08": 37, "2027-09": 126, "2027-10": 31, "2027-11": 60, "2027-12": 139}}, {"account": "BDCT HQ", "product_type": "BBU", "product_name": "RAN PROCESSOR 6655", "months": {"2026-10": 33.333333333333336, "2026-11": 30.333333333333332, "2026-12": 70, "2027-01": 30, "2027-02": 20, "2027-03": 50, "2027-04": 20, "2027-05": 40, "2027-06": 70, "2027-07": 30, "2027-08": 45, "2027-09": 81.66666666666667, "2027-10": 40, "2027-11": 50, "2027-12": 120}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8850", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 1649", "months": {}}, {"account": "BDCT HQ", "product_type": "IRU", "product_name": "IRU 8848", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4474 B78UB78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4455 B78U B1 B3", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4459 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4454 B78", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4469 B78U", "months": {}}, {"account": "BDCT HQ", "product_type": "DOT", "product_name": "DOT 4465 B78U B1 B3", "months": {}}]}, "citations": {"__refresh_data_py__": {"kind": "code", "code": "\"\"\"\nDemand Review \u2014 Cycle \u5bf9\u6bd4\u5206\u6790\nReads the three Demand Review Excel files from the sandbox and writes data.json.\n\"\"\"\nimport asyncio\nimport json\nimport os\nfrom datetime import datetime, timezone\nfrom pathlib import Path\n\nimport openpyxl\n\nAPP_DIR = Path(__file__).parent\n\n# --- Excel source files (fixed, uploaded by user) ---\nEXCEL_FILES = {\n    \"202601\": (Path(\"/home/user/Demand Review 202601.xlsx\"), \"DR 2026 and 2027\"),\n    \"202602\": (Path(\"/home/user/Demand Review 202602.xlsx\"), \"202602\"),\n    \"202603\": (Path(\"/home/user/Demand Review 202603.xlsx\"), \"202603\"),\n}\n\n# Rows that are subtotals / grand totals \u2014 exclude from product-level data\nEXCLUDE_ACCOUNTS = {\n    \"BDCT Total\",\n    \"Subtotal 202512\",\n    \"Subtotal 202601\",\n    \"Subtotal 202602\",\n    \"Subtotal 202603\",\n}\n\n\ndef extract_cycle(fpath: Path, sheet_name: str) -> list[dict]:\n    \"\"\"Extract Account / Product Type / Product Name / monthly qty from one sheet.\"\"\"\n    wb = openpyxl.load_workbook(fpath, read_only=True, data_only=True)\n    ws = wb[sheet_name]\n    rows = list(ws.iter_rows(values_only=True))\n    wb.close()\n\n    header = list(rows[0])\n    # Identify YYYY-MM month columns\n    month_cols: dict[str, int] = {\n        h: i\n        for i, h in enumerate(header)\n        if h and isinstance(h, str) and len(h) == 7 and h[4] == \"-\"\n    }\n\n    records = []\n    for row in rows[1:]:\n        account = row[0]\n        if not account or str(account) in EXCLUDE_ACCOUNTS:\n            continue\n        months: dict[str, int] = {}\n        for m, idx in month_cols.items():\n            v = row[idx]\n            if v and v != 0:\n                months[m] = int(v) if isinstance(v, float) and v == int(v) else v\n        records.append(\n            {\n                \"account\": str(account),\n                \"product_type\": str(row[1] or \"\"),\n                \"product_name\": str(row[2] or \"\"),\n                \"months\": months,\n            }\n        )\n    return records\n\n\nasync def main() -> None:\n    # --- citation_start [demand_cycles] ---\n    # Re-read all three Excel files each refresh to pick up any in-place edits.\n    cycles: dict[str, list] = {}\n    for cycle_id, (fpath, sheet) in EXCEL_FILES.items():\n        cycles[cycle_id] = extract_cycle(fpath, sheet)\n    # --- citation_end [demand_cycles] ---\n\n    data = {\n        \"metadata\": {\n            \"title\": \"Demand Review \u2014 Cycle \u5bf9\u6bd4\u5206\u6790\",\n            \"generated_at\": datetime.now(timezone.utc).isoformat(),\n            \"description\": \"BDCT \u7701\u4efd + BDCT HQ \u9700\u6c42\u91cf\u8de8 Cycle \u5bf9\u6bd4\",\n            \"app_dir\": str(APP_DIR),\n            \"source_files\": {\n                cid: str(fp) for cid, (fp, _) in EXCEL_FILES.items()\n            },\n            \"row_counts\": {cid: len(rows) for cid, rows in cycles.items()},\n        },\n        \"cycles\": cycles,\n    }\n\n    tmp = APP_DIR / \"data.json.tmp\"\n    tmp.write_text(json.dumps(data, ensure_ascii=False))\n    os.replace(tmp, APP_DIR / \"data.json\")\n    total = sum(len(v) for v in cycles.values())\n    print(f\"data.json written \u2014 {len(cycles)} cycles, {total} total rows\")\n\n\nasyncio.run(main())\n", "language": "python", "start_line": 1, "end_line": 97}, "demand_cycles": {"kind": "code", "code": "    # Re-read all three Excel files each refresh to pick up any in-place edits.\n    cycles: dict[str, list] = {}\n    for cycle_id, (fpath, sheet) in EXCEL_FILES.items():\n        cycles[cycle_id] = extract_cycle(fpath, sheet)", "language": "python", "start_line": 70, "end_line": 73}}};</script>
+<style>
+:root {
+  --bg:#ffffff;--bg1:#f1f3f6;--bg2:#e9ecf1;
+  --bd:#e3e6ec;--bd2:#cdd2db;
+  --brand:#3559e6;--brand2:#2442b8;--sel:#eaeefc;
+  --tx:#11141a;--tx2:#5c6470;
+  --pos:#159a6a;--neg:#dc4c4c;--pos-bg:#e8f6ee;--neg-bg:#fdecea;
+  --c0:#3559e6;--c1:#e07c2a;--c2:#159a6a;
+  --c3:#9b59b6;--c4:#e74c3c;--c5:#1abc9c;--c6:#e67e22;
+}
+html[data-theme="dark"]{
+  --bg:#0a0b0e;--bg1:#121419;--bg2:#181b22;--bd:#23262e;--bd2:#343844;
+  --brand:#6a92ff;--brand2:#88a8ff;--sel:#1a2030;
+  --tx:#eef0f4;--tx2:#9aa0ad;
+  --pos:#46d39a;--neg:#ff6b6b;--pos-bg:#0e2a1d;--neg-bg:#2d0f0f;
+  --c0:#6a92ff;--c1:#f0ab68;--c2:#46d39a;
+  --c3:#c39bd3;--c4:#f1948a;--c5:#76d7c4;--c6:#f0b27a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;background:var(--bg);color:var(--tx);}
+.no-data{padding:48px 32px;text-align:center;color:var(--tx2);font-size:15px;}
+
+/* ── Header ── */
+.hdr{padding:12px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--bg);position:sticky;top:0;z-index:200;}
+.hdr-title{font-size:16px;font-weight:600;letter-spacing:-.02em;}
+.hdr-sub{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);margin-top:1px;}
+.hdr-ts{font-size:11px;color:var(--tx2);font-family:monospace;margin-left:6px;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-left:auto;}
+.fl{display:flex;align-items:center;gap:4px;}
+.fl-lbl{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);white-space:nowrap;}
+select{font-family:inherit;font-size:12px;color:var(--tx);background:var(--bg1);border:1px solid var(--bd);border-radius:5px;padding:4px 8px;cursor:pointer;outline:none;max-width:140px;}
+select:focus{border-color:var(--brand);}
+.seg{display:flex;border:1px solid var(--bd);border-radius:5px;overflow:hidden;}
+.seg button{font-family:inherit;font-size:12px;color:var(--tx2);background:var(--bg1);border:none;border-right:1px solid var(--bd);padding:4px 10px;cursor:pointer;}
+.seg button:last-child{border-right:none;}
+.seg button.on{background:var(--brand);color:#fff;}
+.upload-btn{display:flex;align-items:center;gap:6px;font-family:inherit;font-size:12px;font-weight:500;color:var(--brand);background:var(--sel);border:1px solid var(--bd);border-radius:5px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+.upload-btn:hover{background:var(--bg2);}
+#file-input{display:none;}
+
+/* ── Cycle pills ── */
+.cycle-pills{display:flex;gap:4px;flex-wrap:wrap;padding:8px 20px;border-bottom:1px solid var(--bd);background:var(--bg);align-items:center;}
+.cycle-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-family:monospace;font-weight:500;letter-spacing:.05em;padding:3px 8px 3px 6px;border-radius:4px;border:1px solid var(--bd);background:var(--bg1);color:var(--tx2);}
+.cycle-pill .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.cycle-pill .rm{margin-left:4px;cursor:pointer;opacity:.5;font-size:12px;line-height:1;}
+.cycle-pill .rm:hover{opacity:1;}
+.pills-label{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--tx2);margin-right:4px;}
+
+/* ── KPI ── */
+.kpi-row{display:flex;background:var(--bd);gap:1px;border-bottom:1px solid var(--bd);overflow-x:auto;}
+.kpi{background:var(--bg);padding:16px 20px;flex:1;min-width:160px;}
+.kpi-eye{font-family:monospace;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2);display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.kpi-val{font-size:2rem;font-weight:300;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1;color:var(--tx);}
+.kpi-dlta{font-size:11px;margin-top:4px;color:var(--tx2);}
+.kpi-dlta .pos-t{color:var(--pos);font-weight:600;}
+.kpi-dlta .neg-t{color:var(--neg);font-weight:600;}
+
+/* ── Tabs ── */
+.tab-bar{display:flex;border-bottom:1px solid var(--bd);padding:0 20px;background:var(--bg);position:sticky;top:49px;z-index:199;overflow-x:auto;}
+.tab-btn{font-family:inherit;font-size:13px;font-weight:500;color:var(--tx2);background:none;border:none;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;white-space:nowrap;margin-bottom:-1px;transition:color .15s,border-color .15s;}
+.tab-btn:hover{color:var(--tx);}
+.tab-btn.on{color:var(--brand);border-bottom-color:var(--brand);}
+
+/* ── Content ── */
+.content{padding:20px;max-width:1280px;margin:0 auto;}
+.panel{display:none;}.panel.on{display:block;}
+.sec-hd{margin-bottom:14px;}
+.sec-title{font-size:14px;font-weight:600;margin-bottom:2px;}
+.sec-sub{font-size:12px;color:var(--tx2);}
+.legend{display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.leg-i{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--tx2);}
+.leg-d{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.chart-box{width:100%;height:370px;border-radius:8px;border:1px solid var(--bd);background:var(--bg1);}
+.chart-tall{height:500px;}
+
+/* ── Tables ── */
+.tbl-wrap{overflow:auto;border-radius:8px;border:1px solid var(--bd);max-height:600px;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+thead th{font-family:monospace;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2);background:var(--bg1);padding:8px 10px;text-align:left;border-bottom:1px solid var(--bd);position:sticky;top:0;white-space:nowrap;}
+thead th.r{text-align:right;}
+tbody tr{border-bottom:1px solid var(--bd);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:var(--bg1);}
+tbody td{padding:7px 10px;color:var(--tx);}
+tbody td.r{text-align:right;font-variant-numeric:tabular-nums;}
+tbody tr.total-row td{background:var(--bg2);font-weight:700;border-top:2px solid var(--bd2);}
+.dp{color:var(--pos);font-weight:600;}.dn{color:var(--neg);font-weight:600;}.dz{color:var(--tx2);}
+
+/* ── Upload modal ── */
+.upload-modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.4);align-items:center;justify-content:center;}
+.upload-modal.show{display:flex;}
+.upload-card{background:var(--bg);border-radius:12px;border:1px solid var(--bd);padding:28px 32px;width:440px;max-width:92vw;}
+.uc-title{font-size:16px;font-weight:600;margin-bottom:12px;}
+.uc-tabs{display:flex;gap:0;border-bottom:1px solid var(--bd);margin-bottom:16px;}
+.uc-tab{font-family:inherit;font-size:13px;font-weight:500;color:var(--tx2);background:none;border:none;border-bottom:2px solid transparent;padding:8px 14px;cursor:pointer;margin-bottom:-1px;transition:color .15s,border-color .15s;}
+.uc-tab:hover{color:var(--tx);}
+.uc-tab.on{color:var(--brand);border-bottom-color:var(--brand);}
+.uc-sub{font-size:12px;color:var(--tx2);margin-bottom:14px;line-height:1.6;}
+.drop-zone{border:2px dashed var(--bd2);border-radius:8px;padding:32px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:16px;}
+.drop-zone:hover,.drop-zone.drag{border-color:var(--brand);background:var(--sel);}
+.drop-icon{font-size:32px;margin-bottom:8px;}
+.drop-text{font-size:13px;color:var(--tx2);}
+.drop-text span{color:var(--brand);font-weight:600;cursor:pointer;}
+.uc-status{font-size:12px;color:var(--tx2);min-height:18px;margin-bottom:14px;}
+.uc-status.ok{color:var(--pos);}.uc-status.err{color:var(--neg);}
+.uc-btns{display:flex;gap:8px;justify-content:flex-end;}
+.btn{font-family:inherit;font-size:13px;font-weight:500;padding:7px 16px;border-radius:6px;border:1px solid var(--bd);cursor:pointer;transition:background .15s;}
+.btn-ghost{background:var(--bg1);color:var(--tx2);}.btn-ghost:hover{background:var(--bg2);}
+.btn-primary{background:var(--brand);color:#fff;border-color:var(--brand);}.btn-primary:hover{background:var(--brand2);}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;}
+.sp-input-row{margin-bottom:6px;}
+.sp-input{width:100%;font-family:inherit;font-size:13px;color:var(--tx);background:var(--bg1);border:1px solid var(--bd);border-radius:6px;padding:9px 12px;outline:none;transition:border-color .15s;}
+.sp-input:focus{border-color:var(--brand);}
+.sp-input::placeholder{color:var(--tx2);}
+.sp-hint{font-size:11px;min-height:18px;margin-bottom:2px;}
+.sp-hint.ok{color:var(--pos);}.sp-hint.warn{color:#c47d00;}.sp-hint.err{color:var(--neg);}
+
+@media(max-width:650px){.kpi-row{display:grid;grid-template-columns:1fr 1fr;}}
+@media print{
+  body{margin:0;padding:.4in .6in;background:#fff;print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+  .hdr,.tab-bar,.cycle-pills{position:static!important;}
+  .panel{display:block!important;}
+  .chart-box{break-inside:avoid;height:260px!important;}
+  .upload-btn,.upload-modal{display:none!important;}
+}
+</style>
+
+<style data-live-web-app-citations>
+  .citation-python-code {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 8px;
+    background: #0f172a;
+    color: #e5e7eb;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .citation-python-code code {
+    display: grid;
+    gap: 0;
+    min-width: 0;
+    font: inherit;
+  }
+  .citation-code-line {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    min-width: 0;
+  }
+  .citation-code-line-number {
+    padding-right: 12px;
+    color: #64748b;
+    font-size: 11px;
+    line-height: inherit;
+    text-align: right;
+    user-select: none;
+  }
+  .citation-code-line-source {
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .citation-token-comment { color: #94a3b8; }
+  .citation-token-keyword { color: #93c5fd; font-weight: 600; }
+  .citation-token-number { color: #fbbf24; }
+  .citation-token-string { color: #86efac; }
+  .glean-citation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    min-width: 18px;
+    height: 18px;
+    margin: 0 1px;
+    padding: 0 5px;
+    border: 1px solid var(--theme-border-light, #e5e5e5);
+    border-radius: 9px;
+    background: var(--theme-background-light, #f6f6f6);
+    color: var(--theme-text-secondary, #727272);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .glean-citation:hover {
+    background: var(--theme-background-mid, #f0f0f0);
+    color: var(--theme-text-primary, #1b1b1b);
+  }
+  .glean-citation:focus-visible {
+    outline: 2px solid var(--theme-primary-brand, #343ced);
+    outline-offset: 1px;
+  }
+  .glean-citation-popover {
+    position: absolute;
+    z-index: 2147483647;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: min(500px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 16px);
+    overflow: auto;
+    background: var(--theme-background, #ffffff);
+    border: 1px solid var(--theme-border-dark, #cccccc);
+    border-radius: 12px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.25);
+    color: var(--theme-text-primary, #1b1b1b);
+    font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Text", "Segoe UI", sans-serif;
+  }
+  .glean-citation-popover[hidden] {
+    display: none;
+  }
+  .glean-citation-content {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 20px 20px 8px;
+  }
+  .glean-citation-content:last-child {
+    padding-bottom: 20px;
+  }
+  .glean-citation-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.125px;
+    color: var(--theme-text-primary, #1b1b1b);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .glean-citation-text a {
+    color: var(--theme-primary-brand, #343ced);
+  }
+  .glean-citation-popover .citation-python-code {
+    max-height: 320px;
+    overflow: auto;
+  }
+  .glean-citation-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    padding: 0 20px 12px;
+  }
+  .glean-citation-toggle {
+    height: 34px;
+    padding: 0 12px;
+    border: 1px solid var(--theme-border-light, #e5e5e5);
+    border-radius: 8px;
+    background: var(--theme-background, #ffffff);
+    color: var(--theme-text-primary, #1b1b1b);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .glean-citation-toggle:hover {
+    background: var(--theme-background-light, #f6f6f6);
+  }
+  .glean-citation-segmented {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+    box-sizing: border-box;
+    height: 34px;
+    padding: 0 4px;
+    background: var(--theme-background-light, #f6f6f6);
+    border: 1px solid var(--theme-border-light, #e5e5e5);
+    border-radius: 12px;
+  }
+  .glean-citation-segment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--theme-text-secondary, #727272);
+    cursor: pointer;
+  }
+  .glean-citation-segment[aria-selected="true"] {
+    background: var(--theme-background, #ffffff);
+    color: var(--theme-text-primary, #1b1b1b);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  .glean-citation-segment svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  @media print {
+    .glean-citation,
+    .glean-citation-popover { display: none !important; }
+  }
+</style>
+<script data-live-web-app-citations>
+  (function() {
+    var tokenPattern = /(?:\"\"\"[\s\S]*?\"\"\"|'''[\s\S]*?'''|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|#[^\n]*|\b(?:False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)\b|\b\d+(?:\.\d+)?\b)/g;
+    var keywordPattern = /^(?:False|None|True|and|as|assert|async|await|break|class|continue|def|del|elif|else|except|finally|for|from|global|if|import|in|is|lambda|nonlocal|not|or|pass|raise|return|try|while|with|yield)$/;
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, function(ch) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
+      });
+    }
+
+    function tokenClass(token) {
+      if (token.charAt(0) === '#') return 'citation-token-comment';
+      if (keywordPattern.test(token)) return 'citation-token-keyword';
+      if (/^\d/.test(token)) return 'citation-token-number';
+      return 'citation-token-string';
+    }
+
+    function highlightPython(code) {
+      var source = String(code || '');
+      var output = '';
+      var lastIndex = 0;
+      source.replace(tokenPattern, function(token, offset) {
+        output += escapeHtml(source.slice(lastIndex, offset));
+        output += '<span class="' + tokenClass(token) + '">' + escapeHtml(token) + '</span>';
+        lastIndex = offset + token.length;
+        return token;
+      });
+      return output + escapeHtml(source.slice(lastIndex));
+    }
+
+    function renderPythonCode(code, startLine) {
+      var lines = String(code || '').split('\n');
+      var parsedStartLine = Number(startLine);
+      var firstLine = Number.isFinite(parsedStartLine) && parsedStartLine > 0 ? parsedStartLine : 1;
+      var renderedLines = lines.map(function(line, index) {
+        return '<span class="citation-code-line">' +
+          '<span class="citation-code-line-number">' + (firstLine + index) + '</span>' +
+          '<span class="citation-code-line-source">' + highlightPython(line) + '</span>' +
+          '</span>';
+      }).join('');
+      return '<pre class="citation-python-code"><code class="language-python">' +
+        renderedLines +
+        '</code></pre>';
+    }
+
+    function getFullCode() {
+      var citations = (window.APP_DATA && window.APP_DATA.citations) || {};
+      return citations.__refresh_data_py__ && citations.__refresh_data_py__.code;
+    }
+
+    var iconInfo = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.25"></circle><path d="M8 7.25v3.4"></path><path d="M8 5.05h.01"></path></svg>';
+    var iconCode = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.75 5 2.75 8l3 3"></path><path d="M10.25 5l3 3-3 3"></path></svg>';
+    var markdownLinkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+
+    function renderText(value) {
+      return escapeHtml(value || '').replace(markdownLinkPattern, function(match, label, url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + label + '</a>';
+      });
+    }
+
+    function citationViews(citation, note) {
+      if (!citation) return [];
+      if (citation.kind === 'text') return citation.explanation ? ['info'] : [];
+      var views = [];
+      if (citation.code) {
+        if (note) views.push('info');
+        views.push('code');
+      }
+      return views;
+    }
+
+    var popoverElement = null;
+    var activeTrigger = null;
+    var activeCitation = null;
+    var activeNote = '';
+    var repositionHandle = null;
+
+    function ensurePopover() {
+      if (popoverElement && popoverElement.isConnected) return popoverElement;
+      popoverElement = document.createElement('div');
+      popoverElement.className = 'glean-citation-popover';
+      popoverElement.setAttribute('role', 'dialog');
+      popoverElement.hidden = true;
+      document.body.appendChild(popoverElement);
+      return popoverElement;
+    }
+
+    function renderCodePanel(citation) {
+      var fullCode = getFullCode();
+      var hasFullCode = fullCode && fullCode !== citation.code;
+      var showingFull = popoverElement.dataset.full === 'true' && hasFullCode;
+      return renderPythonCode(showingFull ? fullCode : (citation.code || ''), showingFull ? 1 : (citation.start_line || 1));
+    }
+
+    function renderActiveView(citation, view) {
+      if (view === 'code') return renderCodePanel(citation);
+      var text = citation.kind === 'text' ? citation.explanation : activeNote;
+      return text ? '<p class="glean-citation-text">' + renderText(text) + '</p>' : '';
+    }
+
+    function renderPopover() {
+      if (!activeCitation) return;
+      var views = citationViews(activeCitation, activeNote);
+      var view = popoverElement.dataset.view;
+      if (views.indexOf(view) === -1) {
+        view = views[0] || 'info';
+        popoverElement.dataset.view = view;
+      }
+      var fullCode = getFullCode();
+      var hasFullCode = fullCode && fullCode !== activeCitation.code;
+      var segmented = views.length > 1
+        ? '<div class="glean-citation-segmented" role="tablist">' +
+            '<button type="button" class="glean-citation-segment" role="tab" data-glean-citation-view="info" aria-label="Explanation" aria-selected="' + (view === 'info') + '">' + iconInfo + '</button>' +
+            '<button type="button" class="glean-citation-segment" role="tab" data-glean-citation-view="code" aria-label="Code" aria-selected="' + (view === 'code') + '">' + iconCode + '</button>' +
+          '</div>'
+        : '';
+      var toggle = view === 'code' && hasFullCode
+        ? '<button type="button" class="glean-citation-toggle" data-glean-citation-toggle-full>' +
+            (popoverElement.dataset.full === 'true' ? 'Show only relevant code' : 'Show full code') + '</button>'
+        : '';
+      var header = segmented || toggle ? '<div class="glean-citation-header">' + toggle + segmented + '</div>' : '';
+      popoverElement.innerHTML = '<div class="glean-citation-content">' + renderActiveView(activeCitation, view) + '</div>' + header;
+    }
+
+    function positionPopover() {
+      if (!activeTrigger || !popoverElement || popoverElement.hidden) return;
+      var margin = 8;
+      var rect = activeTrigger.getBoundingClientRect();
+      var width = popoverElement.offsetWidth;
+      var height = popoverElement.offsetHeight;
+      var viewportWidth = document.documentElement.clientWidth;
+      var viewportHeight = window.innerHeight;
+      var left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
+      var placeBelow = viewportHeight - rect.bottom >= height + margin || rect.top < height + margin;
+      var top = placeBelow ? rect.bottom + margin : rect.top - height - margin;
+      top = Math.max(margin, top);
+      popoverElement.style.left = (left + window.scrollX) + 'px';
+      popoverElement.style.top = (top + window.scrollY) + 'px';
+    }
+
+    function scheduleReposition() {
+      if (repositionHandle) return;
+      repositionHandle = window.requestAnimationFrame(function() {
+        repositionHandle = null;
+        positionPopover();
+      });
+    }
+
+    function closeCitation() {
+      if (!popoverElement || popoverElement.hidden) return;
+      popoverElement.hidden = true;
+      popoverElement.innerHTML = '';
+      activeTrigger = null;
+      activeCitation = null;
+      activeNote = '';
+    }
+
+    function openCitation(trigger, name) {
+      var citation = ((window.APP_DATA && window.APP_DATA.citations) || {})[name];
+      var note = trigger.getAttribute('data-citation-note') || '';
+      if (!citation || !citationViews(citation, note).length) return;
+      ensurePopover();
+      if (activeTrigger === trigger && !popoverElement.hidden) {
+        closeCitation();
+        return;
+      }
+      activeTrigger = trigger;
+      activeCitation = citation;
+      activeNote = note;
+      popoverElement.dataset.full = 'false';
+      popoverElement.dataset.view = citationViews(citation, note)[0];
+      popoverElement.hidden = false;
+      renderPopover();
+      positionPopover();
+    }
+
+    document.addEventListener('click', function(event) {
+      var target = event.target instanceof Element ? event.target : null;
+      if (!target) return;
+      var trigger = target.closest('.glean-citation[data-citation]');
+      if (trigger) {
+        event.preventDefault();
+        openCitation(trigger, trigger.getAttribute('data-citation'));
+        return;
+      }
+      if (!popoverElement || popoverElement.hidden) return;
+      if (!target.closest('.glean-citation-popover')) {
+        closeCitation();
+        return;
+      }
+      var segment = target.closest('[data-glean-citation-view]');
+      if (segment) {
+        popoverElement.dataset.view = segment.getAttribute('data-glean-citation-view');
+        renderPopover();
+        positionPopover();
+        return;
+      }
+      if (target.closest('[data-glean-citation-toggle-full]')) {
+        popoverElement.dataset.full = popoverElement.dataset.full === 'true' ? 'false' : 'true';
+        renderPopover();
+        positionPopover();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeCitation();
+    });
+    window.addEventListener('scroll', scheduleReposition, true);
+    window.addEventListener('resize', scheduleReposition);
+
+    window.LiveWebAppCitations = {
+      escapeHtml: escapeHtml,
+      highlightPython: highlightPython,
+      renderPythonCode: renderPythonCode,
+      renderText: renderText,
+      open: openCitation,
+      close: closeCitation
+    };
+  })();
+</script>
+
+</head>
+<body>
+
+<!-- Header -->
+<div class="hdr" data-glean-id="app-header">
+  <div class="hdr-info">
+    <div class="hdr-title">Demand Review — Cycle 对比分析</div>
+    <div class="hdr-sub">BDCT &middot; 省份 + BDCT HQ<span class="hdr-ts" id="hdr-ts"></span></div>
+  </div>
+  <div class="filters">
+    <div class="fl">
+      <span class="fl-lbl">省份</span>
+      <select id="f-account" onchange="applyF()"><option value="">全部</option></select>
+    </div>
+    <div class="fl">
+      <span class="fl-lbl">产品类型</span>
+      <select id="f-ptype" onchange="applyF()"><option value="">全部</option></select>
+    </div>
+    <div class="fl">
+      <span class="fl-lbl">年份</span>
+      <div class="seg" id="yr-seg">
+        <button class="on" onclick="setYr('both',this)">全部</button>
+        <button onclick="setYr('2026',this)">2026</button>
+        <button onclick="setYr('2027',this)">2027</button>
+      </div>
+    </div>
+    <button class="upload-btn" onclick="openUpload()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+      上传新 Cycle
+    </button>
+    <input type="file" id="file-input" accept=".xlsx,.xls" onchange="handleFileSelect(event)">
+  </div>
+</div>
+
+<!-- Cycle pills -->
+<div class="cycle-pills" id="cycle-pills" data-glean-id="cycle-pills">
+  <span class="pills-label">Cycles:</span>
+</div>
+
+<!-- KPIs -->
+<div class="kpi-row" id="kpi-row" data-glean-id="kpi-row">
+  <div class="kpi no-data">加载中…</div>
+</div>
+
+<!-- Tab bar -->
+<div class="tab-bar" data-glean-id="tab-bar">
+  <button class="tab-btn on" onclick="swTab('trend',this)">月度趋势</button>
+  <button class="tab-btn" onclick="swTab('quarter',this)">季度汇总</button>
+  <button class="tab-btn" onclick="swTab('summary',this)">账户汇总</button>
+  <button class="tab-btn" onclick="swTab('province',this)">省份对比</button>
+  <button class="tab-btn" onclick="swTab('ptype',this)">产品类型</button>
+  <button class="tab-btn" onclick="swTab('table',this)">明细变化</button>
+</div>
+
+<!-- Content -->
+<div class="content" data-glean-id="main-content">
+  <div class="panel on" id="p-trend" data-glean-id="panel-trend">
+    <div class="sec-hd">
+      <div class="sec-title">月度需求趋势对比
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">各Cycle对同一月份的总需求预测量对比</div>
+    </div>
+    <div class="legend" id="leg-trend"></div>
+    <div class="chart-box" id="ct-trend" data-glean-id="chart-trend"></div>
+  </div>
+
+  <div class="panel" id="p-quarter" data-glean-id="panel-quarter">
+    <div class="sec-hd">
+      <div class="sec-title">季度需求汇总对比
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">按季度汇总各Cycle总需求，对比每季度需求变化</div>
+    </div>
+    <div class="legend" id="leg-quarter"></div>
+    <div class="chart-box" id="ct-quarter" data-glean-id="chart-quarter"></div>
+  </div>
+
+  <div class="panel" id="p-summary" data-glean-id="panel-summary">
+    <div class="sec-hd">
+      <div class="sec-title">账户汇总视图
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">各省份 + BDCT HQ 总需求量横向对比，含汇总合计行</div>
+    </div>
+    <div class="legend" id="leg-summary"></div>
+    <div class="chart-box" style="height:340px;margin-bottom:16px;" id="ct-summary" data-glean-id="chart-summary"></div>
+    <div class="tbl-wrap" data-glean-id="summary-table-wrap">
+      <table><thead id="sum-thead"></thead><tbody id="sum-tbody"></tbody></table>
+    </div>
+  </div>
+
+  <div class="panel" id="p-province" data-glean-id="panel-province">
+    <div class="sec-hd">
+      <div class="sec-title">省份 + BDCT HQ 需求对比
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">各账户总需求量在不同Cycle间的变化</div>
+    </div>
+    <div class="legend" id="leg-province"></div>
+    <div class="chart-box chart-tall" id="ct-province" data-glean-id="chart-province"></div>
+  </div>
+
+  <div class="panel" id="p-ptype" data-glean-id="panel-ptype">
+    <div class="sec-hd">
+      <div class="sec-title">产品类型需求对比
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">按 AAU / BBU / DOT / IRU / RRU 汇总各Cycle需求</div>
+    </div>
+    <div class="legend" id="leg-ptype"></div>
+    <div class="chart-box" id="ct-ptype" data-glean-id="chart-ptype"></div>
+  </div>
+
+  <div class="panel" id="p-table" data-glean-id="panel-table">
+    <div class="sec-hd">
+      <div class="sec-title">产品需求变化明细
+        <button class="glean-citation" data-citation="demand_cycles" aria-label="Show source" style="margin-left:6px;">i</button>
+      </div>
+      <div class="sec-sub">各产品在各Cycle的总需求及环比变化（仅含有需求记录）</div>
+    </div>
+    <div class="tbl-wrap" data-glean-id="detail-table-wrap">
+      <table><thead id="det-thead"></thead><tbody id="det-tbody"></tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Modal -->
+<div class="upload-modal" id="upload-modal" data-glean-id="upload-modal">
+  <div class="upload-card">
+    <div class="uc-title">加载新 Cycle 数据</div>
+    <div class="uc-tabs">
+      <button class="uc-tab on" id="uc-tab-local" onclick="switchUcTab('local',this)">📂 本地上传</button>
+      <button class="uc-tab" id="uc-tab-sp" onclick="switchUcTab('sp',this)">🔗 SharePoint</button>
+    </div>
+    <div id="uc-panel-local">
+      <div class="uc-sub">支持 Demand Review YYYYMM.xlsx 格式。系统将自动识别 Sheet 名称并提取月份数据。</div>
+      <div class="drop-zone" id="drop-zone"
+           ondragover="event.preventDefault();this.classList.add('drag')"
+           ondragleave="this.classList.remove('drag')"
+           ondrop="handleDrop(event)">
+        <div class="drop-icon">📂</div>
+        <div class="drop-text">拖拽文件到此处，或 <span onclick="document.getElementById('file-input').click()">点击选择文件</span></div>
+      </div>
+      <div class="uc-status" id="uc-status"></div>
+      <div class="uc-btns">
+        <button class="btn btn-ghost" onclick="closeUpload()">取消</button>
+        <button class="btn btn-primary" id="uc-confirm" disabled onclick="confirmUpload()">加入对比</button>
+      </div>
+    </div>
+    <div id="uc-panel-sp" style="display:none;">
+      <div class="uc-sub">粘贴 SharePoint 文件链接（支持共享链接或文档库直链）。点击"加载"后将通过 AI 从 SharePoint 读取 Excel。</div>
+      <div class="sp-input-row">
+        <input type="text" id="sp-url-input" class="sp-input"
+               placeholder="https://company.sharepoint.com/...xlsx 或共享链接"
+               oninput="onSpUrlInput()" />
+      </div>
+      <div class="sp-hint" id="sp-hint"></div>
+      <div class="uc-btns" style="margin-top:16px;">
+        <button class="btn btn-ghost" onclick="closeUpload()">取消</button>
+        <button class="btn btn-primary" id="sp-load-btn" disabled onclick="loadFromSharePoint()">
+          <span id="sp-btn-text">从 SharePoint 加载</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (!window.APP_DATA || window.APP_DATA.error) {
+    document.querySelector('.kpi-row').innerHTML =
+      '<div class="no-data">数据暂不可用，请刷新应用。</div>';
+    return;
+  }
+
+  // ── Bootstrap from APP_DATA ──
+  const meta = window.APP_DATA.metadata || {};
+  if (meta.generated_at) {
+    const d = new Date(meta.generated_at);
+    document.getElementById('hdr-ts').textContent =
+      ' · 更新于 ' + d.toLocaleString('zh-CN', {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  }
+
+  RAW = window.APP_DATA.cycles || {};
+  BUILT_IN_CYCLES = Object.keys(RAW).sort();
+  CYCLES = [...BUILT_IN_CYCLES];
+
+  initFilters();
+  initCh();
+  updateAll();
+});
+
+// ── State ──
+let RAW = {}, BUILT_IN_CYCLES = [], CYCLES = [];
+let S = {account:'', ptype:'', year:'both'};
+
+const CYCLE_HEX = ['#3559e6','#e07c2a','#159a6a','#9b59b6','#e74c3c','#1abc9c','#e67e22'];
+function chex(i){ return CYCLE_HEX[i % CYCLE_HEX.length]; }
+
+const MO26=['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
+const MO27=['2027-01','2027-02','2027-03','2027-04','2027-05','2027-06','2027-07','2027-08','2027-09','2027-10','2027-11','2027-12'];
+const QT26={'Q1 2026':MO26.slice(0,3),'Q2 2026':MO26.slice(3,6),'Q3 2026':MO26.slice(6,9),'Q4 2026':MO26.slice(9)};
+const QT27={'Q1 2027':MO27.slice(0,3),'Q2 2027':MO27.slice(3,6),'Q3 2027':MO27.slice(6,9),'Q4 2027':MO27.slice(9)};
+
+function getMo(){return S.year==='2026'?MO26:S.year==='2027'?MO27:[...MO26,...MO27];}
+function getQt(){return S.year==='2026'?QT26:S.year==='2027'?QT27:{...QT26,...QT27};}
+
+function initFilters(){
+  const as=document.getElementById('f-account'),ps=document.getElementById('f-ptype');
+  const accs=new Set(),pts=new Set();
+  BUILT_IN_CYCLES.forEach(c=>(RAW[c]||[]).forEach(r=>{if(r.account)accs.add(r.account);if(r.product_type)pts.add(r.product_type);}));
+  [...accs].sort().forEach(a=>{const o=document.createElement('option');o.value=a;o.textContent=a;as.appendChild(o);});
+  [...pts].sort().forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;ps.appendChild(o);});
+}
+
+function applyF(){S.account=document.getElementById('f-account').value;S.ptype=document.getElementById('f-ptype').value;updateAll();}
+function setYr(y,btn){S.year=y;document.querySelectorAll('#yr-seg button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');updateAll();}
+function swTab(tab,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('p-'+tab).classList.add('on');
+  setTimeout(()=>Object.values(CH).forEach(c=>c&&c.resize()),60);
+}
+
+function filt(c){
+  return (RAW[c]||[]).filter(r=>{
+    if(S.account&&r.account!==S.account)return false;
+    if(S.ptype&&r.product_type!==S.ptype)return false;
+    return true;
+  });
+}
+function aggMo(rows){const mo=getMo(),res={};mo.forEach(m=>res[m]=0);rows.forEach(r=>mo.forEach(m=>{if(r.months[m])res[m]+=r.months[m];}));return res;}
+function aggTot(rows){let t=0;const mo=getMo();rows.forEach(r=>mo.forEach(m=>{if(r.months[m])t+=r.months[m];}));return t;}
+function aggQt(rows){const qt=getQt(),res={};Object.keys(qt).forEach(q=>res[q]=0);rows.forEach(r=>Object.entries(qt).forEach(([q,ms])=>ms.forEach(m=>{if(r.months[m])res[q]+=r.months[m];})));return res;}
+function aggAcc(rows){const res={},mo=getMo();rows.forEach(r=>{if(!res[r.account])res[r.account]=0;mo.forEach(m=>{if(r.months[m])res[r.account]+=r.months[m];});});return res;}
+function aggPt(rows){const res={},mo=getMo();rows.forEach(r=>{if(!res[r.product_type])res[r.product_type]=0;mo.forEach(m=>{if(r.months[m])res[r.product_type]+=r.months[m];});});return res;}
+function fmt(n){return n.toLocaleString();}
+
+// ── Cycle pills ──
+function renderPills(){
+  const el=document.getElementById('cycle-pills');
+  el.innerHTML='<span class="pills-label">Cycles:</span>';
+  CYCLES.forEach((c,i)=>{
+    const pill=document.createElement('span');pill.className='cycle-pill';pill.dataset.gleanId='pill-'+c;
+    pill.innerHTML=`<span class="dot" style="background:${chex(i)}"></span>${c}`;
+    if(!BUILT_IN_CYCLES.includes(c)){
+      const rm=document.createElement('span');rm.className='rm';rm.textContent='×';
+      rm.onclick=()=>{delete RAW[c];CYCLES=CYCLES.filter(x=>x!==c);renderPills();updateAll();};
+      pill.appendChild(rm);
+    }
+    el.appendChild(pill);
+  });
+}
+
+// ── KPIs ──
+function renderKPIs(){
+  const row=document.getElementById('kpi-row');row.innerHTML='';
+  const tots=CYCLES.map(c=>aggTot(filt(c)));
+  CYCLES.forEach((c,i)=>{
+    const t=tots[i],base=tots[0],diff=t-base;
+    const pct=base>0?((diff/base)*100).toFixed(1):'—';
+    let dHtml=`<div class="kpi-dlta" style="color:var(--tx2)">基准周期</div>`;
+    if(i>0){
+      const s=diff>0?'+':'',cls=diff>0?'pos-t':diff<0?'neg-t':'';
+      dHtml=`<div class="kpi-dlta">vs ${CYCLES[0]}: <span class="${cls}">${s}${fmt(diff)}</span>${base>0?` (<span class="${cls}">${s}${pct}%</span>)`:''}</div>`;
+    }
+    const div=document.createElement('div');div.className='kpi';div.dataset.gleanId='kpi-'+c;
+    div.innerHTML=`<div class="kpi-eye"><span class="dot" style="background:${chex(i)}"></span>${c}</div>
+      <div class="kpi-val">${fmt(t)}</div>${dHtml}`;
+    row.appendChild(div);
+  });
+}
+
+// ── Legend ──
+function renderLegend(elId){
+  const el=document.getElementById(elId);el.innerHTML='';
+  CYCLES.forEach((c,i)=>{
+    const d=document.createElement('div');d.className='leg-i';
+    d.innerHTML=`<span class="leg-d" style="background:${chex(i)}"></span>${c}`;
+    el.appendChild(d);
+  });
+}
+
+// ── ECharts ──
+const CH={};
+const axLbl={fontSize:11,color:'#5c6470'};
+const yFmt=v=>v>=1000?(v/1000).toFixed(0)+'k':v;
+const tipFmt=v=>fmt(v||0)+' pcs';
+
+function initCh(){
+  ['trend','quarter','summary','province','ptype'].forEach(k=>{
+    CH[k]=echarts.init(document.getElementById('ct-'+k),null,{renderer:'svg'});
+  });
+  window.addEventListener('resize',()=>Object.values(CH).forEach(c=>c&&c.resize()));
+}
+
+function updTrend(){
+  renderLegend('leg-trend');
+  const mo=getMo(),lbl=mo.map(m=>{const[y,n]=m.split('-');return n+'/'+y.slice(2);});
+  CH.trend.setOption({
+    tooltip:{trigger:'axis',valueFormatter:tipFmt},legend:{show:false},
+    grid:{left:55,right:16,top:16,bottom:46},
+    xAxis:{type:'category',data:lbl,axisLabel:{...axLbl,rotate:mo.length>12?35:0,interval:mo.length>12?1:0}},
+    yAxis:{type:'value',axisLabel:{...axLbl,formatter:yFmt}},
+    series:CYCLES.map((c,i)=>({
+      name:c,type:'line',smooth:true,symbol:'circle',symbolSize:4,
+      data:Object.values(aggMo(filt(c))),
+      lineStyle:{color:chex(i),width:2.5},itemStyle:{color:chex(i)},
+      areaStyle:{color:chex(i),opacity:.05}
+    }))
+  },true);
+}
+
+function updQt(){
+  renderLegend('leg-quarter');
+  const qt=getQt(),keys=Object.keys(qt);
+  CH.quarter.setOption({
+    tooltip:{trigger:'axis',valueFormatter:tipFmt},legend:{show:false},
+    grid:{left:55,right:16,top:16,bottom:40},
+    xAxis:{type:'category',data:keys,axisLabel:axLbl},
+    yAxis:{type:'value',axisLabel:{...axLbl,formatter:yFmt}},
+    series:CYCLES.map((c,i)=>{
+      const agg=aggQt(filt(c));
+      return{name:c,type:'bar',barGap:'8%',data:keys.map(k=>agg[k]||0),itemStyle:{color:chex(i)},
+        label:{show:true,position:'top',fontSize:10,color:'#5c6470',formatter:p=>p.value>0?fmt(p.value):''}};
+    })
+  },true);
+}
+
+function updSummary(){
+  renderLegend('leg-summary');
+  const allAcc=new Set();
+  CYCLES.forEach(c=>filt(c).forEach(r=>allAcc.add(r.account)));
+  const accs=[...allAcc].sort();
+  CH.summary.setOption({
+    tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},legend:{show:false},
+    grid:{left:60,right:16,top:16,bottom:40},
+    xAxis:{type:'category',data:CYCLES,axisLabel:axLbl},
+    yAxis:{type:'value',axisLabel:{...axLbl,formatter:yFmt}},
+    series:accs.map(a=>({
+      name:a,type:'bar',stack:'total',
+      data:CYCLES.map(c=>aggTot(filt(c).filter(r=>r.account===a))),
+      emphasis:{focus:'series'}
+    }))
+  },true);
+  // Table
+  const thead=document.getElementById('sum-thead');
+  let thHtml='<tr><th>账户</th>';
+  CYCLES.forEach(c=>thHtml+=`<th class="r">${c}</th>`);
+  if(CYCLES.length>=2) thHtml+=`<th class="r">Δ ${CYCLES[0].slice(4)}→${CYCLES[CYCLES.length-1].slice(4)}</th>`;
+  thHtml+='</tr>';
+  thead.innerHTML=thHtml;
+  const totals=CYCLES.map(()=>0);
+  const rowData=accs.map(a=>{
+    const vals=CYCLES.map(c=>aggTot(filt(c).filter(r=>r.account===a)));
+    vals.forEach((v,i)=>totals[i]+=v);
+    return{acc:a,vals};
+  }).sort((a,b)=>b.vals[0]-a.vals[0]);
+  let tbHtml='';
+  rowData.forEach(r=>{
+    const d=r.vals[r.vals.length-1]-r.vals[0];
+    const dHtml=CYCLES.length>=2?`<td class="r ${d>0?'dp':d<0?'dn':'dz'}">${d===0?'—':(d>0?'+':'')+fmt(d)}</td>`:'';
+    tbHtml+=`<tr data-glean-id="sum-row-${r.acc}"><td>${r.acc}</td>${r.vals.map(v=>`<td class="r">${v>0?fmt(v):'—'}</td>`).join('')}${dHtml}</tr>`;
+  });
+  const tDiff=totals[totals.length-1]-totals[0];
+  const tDiffHtml=CYCLES.length>=2?`<td class="r ${tDiff>0?'dp':tDiff<0?'dn':'dz'}">${tDiff===0?'—':(tDiff>0?'+':'')+fmt(tDiff)}</td>`:'';
+  tbHtml+=`<tr class="total-row" data-glean-id="sum-total"><td>📊 Grand Total</td>${totals.map(v=>`<td class="r">${fmt(v)}</td>`).join('')}${tDiffHtml}</tr>`;
+  document.getElementById('sum-tbody').innerHTML=tbHtml;
+}
+
+function updProv(){
+  renderLegend('leg-province');
+  const allAcc=new Set();CYCLES.forEach(c=>filt(c).forEach(r=>allAcc.add(r.account)));
+  const base=aggAcc(filt(CYCLES[0]));
+  const accs=[...allAcc].sort((a,b)=>(base[a]||0)-(base[b]||0));
+  CH.province.setOption({
+    tooltip:{trigger:'axis',valueFormatter:tipFmt},legend:{show:false},
+    grid:{left:120,right:20,top:16,bottom:30},
+    xAxis:{type:'value',axisLabel:{...axLbl,formatter:yFmt}},
+    yAxis:{type:'category',data:accs,axisLabel:{...axLbl,width:110}},
+    series:CYCLES.map((c,i)=>{
+      const agg=aggAcc(filt(c));
+      return{name:c,type:'bar',barGap:'8%',data:accs.map(a=>agg[a]||0),itemStyle:{color:chex(i)},
+        label:{show:true,position:'right',fontSize:10,color:'#5c6470',formatter:p=>p.value>0?fmt(p.value):''}};
+    })
+  },true);
+}
+
+function updPt(){
+  renderLegend('leg-ptype');
+  const pts=['AAU','BBU','DOT','IRU','RRU'];
+  CH.ptype.setOption({
+    tooltip:{trigger:'axis',valueFormatter:tipFmt},legend:{show:false},
+    grid:{left:55,right:16,top:16,bottom:30},
+    xAxis:{type:'category',data:pts,axisLabel:axLbl},
+    yAxis:{type:'value',axisLabel:{...axLbl,formatter:yFmt}},
+    series:CYCLES.map((c,i)=>{
+      const agg=aggPt(filt(c));
+      return{name:c,type:'bar',barGap:'8%',data:pts.map(p=>agg[p]||0),itemStyle:{color:chex(i)},
+        label:{show:true,position:'top',fontSize:10.5,color:'#5c6470',formatter:p=>p.value>0?fmt(p.value):''}};
+    })
+  },true);
+}
+
+function updTable(){
+  const thead=document.getElementById('det-thead');
+  let thHtml='<tr><th>省份</th><th>产品类型</th><th>产品名称</th>';
+  CYCLES.forEach(c=>thHtml+=`<th class="r">${c}</th>`);
+  for(let i=1;i<CYCLES.length;i++) thHtml+=`<th class="r">Δ ${CYCLES[i-1].slice(4)}→${CYCLES[i].slice(4)}</th>`;
+  if(CYCLES.length>=3) thHtml+=`<th class="r">Δ 总变化</th>`;
+  thHtml+='</tr>';thead.innerHTML=thHtml;
+  const mo=getMo(),map={};
+  CYCLES.forEach(c=>{
+    filt(c).forEach(r=>{
+      const k=r.account+'|'+r.product_type+'|'+r.product_name;
+      if(!map[k]) map[k]={account:r.account,ptype:r.product_type,pname:r.product_name};
+      let t=0;mo.forEach(m=>{if(r.months[m])t+=r.months[m];});map[k][c]=t;
+    });
+  });
+  const rows=Object.values(map).filter(r=>CYCLES.some(c=>r[c]>0));
+  rows.sort((a,b)=>{if(a.account!==b.account)return a.account.localeCompare(b.account);if(a.ptype!==b.ptype)return a.ptype.localeCompare(b.ptype);return a.pname.localeCompare(b.pname);});
+  const tbody=document.getElementById('det-tbody');tbody.innerHTML='';
+  rows.forEach((r,i)=>{
+    const vals=CYCLES.map(c=>r[c]||0);
+    function dc(d){if(d===0)return`<td class="r dz">—</td>`;const s=d>0?'+':'';return`<td class="r ${d>0?'dp':'dn'}">${s}${fmt(d)}</td>`;}
+    let tds=vals.map(v=>`<td class="r">${v?fmt(v):'—'}</td>`).join('');
+    for(let j=1;j<CYCLES.length;j++) tds+=dc(vals[j]-vals[j-1]);
+    if(CYCLES.length>=3) tds+=dc(vals[vals.length-1]-vals[0]);
+    const tr=document.createElement('tr');tr.dataset.gleanId=`row-${r.account}-${i}`;
+    tr.innerHTML=`<td>${r.account}</td><td>${r.ptype}</td><td>${r.pname}</td>${tds}`;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateAll(){renderPills();renderKPIs();updTrend();updQt();updSummary();updProv();updPt();updTable();}
+
+// ── Upload: Local ──
+function openUpload(){
+  document.getElementById('upload-modal').classList.add('show');
+  document.getElementById('uc-status').textContent='';
+  document.getElementById('uc-status').className='uc-status';
+  document.getElementById('uc-confirm').disabled=true;
+  pendingFile=null;
+  switchUcTab('local',document.getElementById('uc-tab-local'));
+}
+function closeUpload(){document.getElementById('upload-modal').classList.remove('show');}
+function switchUcTab(tab,btn){
+  document.querySelectorAll('.uc-tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.getElementById('uc-panel-local').style.display=tab==='local'?'':'none';
+  document.getElementById('uc-panel-sp').style.display=tab==='sp'?'':'none';
+  if(tab==='sp') setTimeout(()=>document.getElementById('sp-url-input').focus(),80);
+}
+let pendingFile=null;
+function handleFileSelect(e){if(e.target.files[0]) loadFile(e.target.files[0]);e.target.value='';}
+function handleDrop(e){
+  e.preventDefault();document.getElementById('drop-zone').classList.remove('drag');
+  const f=e.dataTransfer.files[0];
+  if(f&&(f.name.endsWith('.xlsx')||f.name.endsWith('.xls'))) loadFile(f);
+  else setStatus('请上传 .xlsx 或 .xls 文件','err');
+}
+function setStatus(msg,cls=''){const el=document.getElementById('uc-status');el.textContent=msg;el.className='uc-status'+(cls?' '+cls:'');}
+function loadFile(file){
+  setStatus('📖 正在解析文件...');
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const wb=XLSX.read(e.target.result,{type:'array'});
+      let sheetName=null;
+      for(const sn of wb.SheetNames){if(sn.includes('DR')||/^\d{6}$/.test(sn)){sheetName=sn;break;}}
+      if(!sheetName) sheetName=wb.SheetNames[0];
+      const ws=wb.Sheets[sheetName];
+      const rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:null});
+      if(!rows.length){setStatus('❌ Sheet 为空','err');return;}
+      const header=rows[0];
+      const iAcc=header.findIndex(h=>h&&String(h).trim()==='Account');
+      const iPt=header.findIndex(h=>h&&String(h).trim()==='Product Type');
+      const iPn=header.findIndex(h=>h&&String(h).trim()==='Product Name');
+      if(iAcc<0||iPt<0||iPn<0){setStatus('❌ 未找到 Account/Product Type/Product Name 列','err');return;}
+      const moCols={};
+      header.forEach((h,i)=>{if(h&&typeof h==='string'&&/^\d{4}-\d{2}$/.test(h.trim()))moCols[h.trim()]=i;});
+      if(Object.keys(moCols).length===0){setStatus('❌ 未找到月份列','err');return;}
+      let cycleId=file.name.match(/\d{6}/)?.[0]||'NEW';
+      if(CYCLES.includes(cycleId)) cycleId=cycleId+'_2';
+      const EXCL=new Set(['BDCT Total','Subtotal 202512','Subtotal 202601','Subtotal 202602','Subtotal 202603']);
+      const data=[];
+      rows.slice(1).forEach(row=>{
+        const acc=row[iAcc];if(!acc||EXCL.has(acc))return;
+        const months={};
+        Object.entries(moCols).forEach(([m,ci])=>{const v=row[ci];if(v&&v!==0)months[m]=typeof v==='number'?v:parseFloat(v)||0;});
+        data.push({account:String(acc),product_type:String(row[iPt]||''),product_name:String(row[iPn]||''),months});
+      });
+      if(!data.length){setStatus('❌ 没有有效数据行','err');return;}
+      pendingFile={cycleId,data};
+      setStatus(`✅ Cycle: ${cycleId} | Sheet: ${sheetName} | ${data.length} 行`,'ok');
+      document.getElementById('uc-confirm').disabled=false;
+    }catch(err){setStatus('❌ 解析失败：'+err.message,'err');}
+  };
+  reader.readAsArrayBuffer(file);
+}
+function confirmUpload(){
+  if(!pendingFile)return;
+  RAW[pendingFile.cycleId]=pendingFile.data;
+  CYCLES.push(pendingFile.cycleId);
+  closeUpload();updateAll();
+}
+
+// ── Upload: SharePoint ──
+function onSpUrlInput(){
+  const url=document.getElementById('sp-url-input').value.trim();
+  const btn=document.getElementById('sp-load-btn'),hint=document.getElementById('sp-hint');
+  if(!url){hint.textContent='';hint.className='sp-hint';btn.disabled=true;return;}
+  const isSP=url.includes('sharepoint.com')||url.includes('1drv.ms')||url.includes('onedrive.live');
+  const isXlsx=/\.(xlsx|xls)/i.test(url)||url.includes('sourcedoc')||url.includes(':x:');
+  if(!isSP){hint.textContent='⚠ 链接看起来不是 SharePoint / OneDrive 地址';hint.className='sp-hint warn';}
+  else if(isXlsx){hint.textContent='✅ 识别为 SharePoint Excel 文件链接';hint.className='sp-hint ok';}
+  else{hint.textContent='🔗 SharePoint 链接，将尝试作为 Excel 读取';hint.className='sp-hint ok';}
+  btn.disabled=false;
+}
+function loadFromSharePoint(){
+  const url=document.getElementById('sp-url-input').value.trim();
+  if(!url)return;
+  document.getElementById('sp-btn-text').textContent='⏳ 请求中...';
+  document.getElementById('sp-load-btn').disabled=true;
+  const context=[
+    '用户希望从以下 SharePoint 链接加载一个 Demand Review Excel 文件，作为新的 Cycle 数据注入当前应用。',
+    'SharePoint URL: '+url,
+    '',
+    '请执行以下步骤：',
+    '1. 调用 glean_document_reader，传入该 URL，设置 should_fetch_raw_bytes=True，以下载 Excel 文件。',
+    '2. 用 openpyxl（data_only=True）打开 local_path：找 "DR 2026"/"DR 2027"/6位数字 sheet；提取 Account、Product Type、Product Name 和 YYYY-MM 月份列；过滤掉 BDCT Total / Subtotal 行。',
+    '3. 从文件名或 sheet 名推断 Cycle ID（如 202604）。若与已有 cycle 重名则加 "_new" 后缀。',
+    '4. 将提取数据输出为 JSON 并更新 HTML artifact：在 RAW 中加入新 cycle，在 CYCLES 数组中 push 新 ID，调用 updateAll() 刷新。',
+    '5. 如无法读取文件（权限不足或链接无效），提示用户检查链接并建议改用本地上传。',
+  ].join('\n');
+  try{
+    window.GleanBridge.postMessage({
+      actionId:'load-sharepoint-excel',type:'glean-send-message',
+      metadata:{displayLabel:'SharePoint 加载 Excel: '+url.slice(0,60)+(url.length>60?'…':''),context}
+    });
+  }catch(e){
+    document.getElementById('sp-hint').textContent='⚠ GleanBridge 不可用，请在 Glean 应用内使用';
+    document.getElementById('sp-hint').className='sp-hint err';
+    document.getElementById('sp-btn-text').textContent='从 SharePoint 加载';
+    document.getElementById('sp-load-btn').disabled=false;
+  }
+  closeUpload();
+}
+</script>
+
+<script>
+try{
+  window.GleanBridge.postMessage({actionId:'export-pdf',type:'glean-add-menu',metadata:{label:'Export as PDF',icon:'export'}});
+  window.GleanBridge.onMessage('action',function(d){if(d.actionId==='export-pdf')window.print();});
+}catch(e){}
+function prepareChartsForPrint(){document.querySelectorAll('[_echarts_instance_]').forEach(function(el){var c=echarts.getInstanceByDom(el);if(!c)return;var img=new Image();img.src=c.getDataURL({type:'png',pixelRatio:2});img.className='print-chart-img';img.style.cssText='width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;z-index:10;';el.dataset.prevPosition=el.style.position;el.style.position='relative';el.appendChild(img);});}
+function cleanUpAfterPrint(){document.querySelectorAll('[_echarts_instance_]').forEach(function(el){var img=el.querySelector('.print-chart-img');if(!img)return;img.remove();el.style.position=el.dataset.prevPosition||'';delete el.dataset.prevPosition;});}
+window.addEventListener('beforeprint',prepareChartsForPrint);
+window.addEventListener('afterprint',cleanUpAfterPrint);
+</script>
+</body>
+</html>
